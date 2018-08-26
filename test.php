@@ -1,6 +1,12 @@
 
 
 <html>
+<!-- ///////////
+import the css
+/////////// -->
+<link rel = 'stylesheet' href = 'styling.css'></link>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+
   <head>
     <title>LYT's library</title>
 
@@ -13,12 +19,16 @@
     <form method = "post">
 
         <input type = "text" name = "keyword">
-        <button type = "submit" value = "Search">
+        <button class = "submit_btn"
+                type = "Search"
+                value = "Search">
             Search
         </button>
+
     </form>
   </body>
 </html>
+
 
 <?php
   if(isset($_POST['keyword']))
@@ -101,7 +111,9 @@ if ($conn -> connect_error) die("fatal error")
       echo $bookInCollection -> showCollectionInFormList();
      ?>
    </select>
-  <input type = "submit" value = "Confirm order">
+  <button type = "submit"
+          class = "submit_btn"
+          value = "Confirm order">Confirm order</button>
   <?php
     // echo $_POST['BookToBeBorrowed'];
     if (isset($_POST['BookToBeBorrowed']))
@@ -134,7 +146,9 @@ if ($conn -> connect_error) die("fatal error")
       echo $bookOutCollection -> showCollectionInFormList();
      ?>
    </select>
-  <input type = "submit" value = "Confirm">
+  <button type = "submit"
+          class = "submit_btn"
+          value = "Confirm">Confirm</button>
   <?php
     if (isset($_POST['BookToBeReturned'])){
       $bookSelected = new BookOut;

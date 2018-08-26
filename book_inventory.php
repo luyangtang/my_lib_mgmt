@@ -48,7 +48,7 @@ class Book
                 $result_content['UserId']);
   }
 
-  function displayInfo($conn)
+  function displayFullInfo($conn)
   // display bookname, category, press and price
   {
     return '[BookId '.$this->id.'] '.$this->name.
@@ -56,6 +56,12 @@ class Book
       .'<br> This is currently '.$this->checkAvailability($conn)[0]
       .' with '.$this->checkAvailability($conn)[1].'.<br>';
     //echo "codes go here";
+  }
+
+  function displayShortInfo($conn)
+  //display book name and press only
+  {
+    return $this->name.' ('.$this->press.')';
   }
 }
 
@@ -198,13 +204,27 @@ class BookCollection
     $this->booksInCollection[] = $tmpBook;
   }
 
-  function displayCollection($conn)
+  function displayFullCollection($conn)
   //connection to database is used for getting availability info
   {
     $collectionInfo = '';
     foreach ($this->booksInCollection as $book)
     {
-      $collectionInfo = $collectionInfo.$book->displayInfo($conn).'<br>';
+      $collectionInfo = $collectionInfo.
+        '<li class="w3-hover-red">'
+        .$book->displayFullInfo($conn)
+        .'</li>';
+    }
+    return $collectionInfo;
+  }
+
+  function displayShortCollection($conn)
+  {
+    $collectionInfo = '';
+    foreach($this->booksInCollection as $book)
+    {
+      $collectionInfo = $collectionInfo.'<li class="w3-hover-red">'
+        .$book->displayShortInfo($conn).'</li>';
     }
     return $collectionInfo;
   }
