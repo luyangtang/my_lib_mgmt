@@ -46,7 +46,7 @@
   <!-- get the results from db -->
   <div>
     <?php
-      require "search_book.php"
+      require "func_search_book.php"
     ?>
   </div>
   <!-- Books for borrowing -->

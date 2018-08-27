@@ -6,9 +6,9 @@
   else {
     $keyword = '%';
   }
-  
+
 require_once 'db_conn.php';
-require 'book_inventory.php';
+require 'func_book_inventory.php';
 
 $conn = new mysqli($hn,$un,$pw,$db);
 if ($conn -> connect_error) die("fatal error");
