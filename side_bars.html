@@ -5,6 +5,7 @@
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+<!-- Side bar-->
 <div class="w3-sidebar
             w3-animate-left
             w3-bar-block
@@ -28,7 +29,7 @@
         class="w3-bar-item w3-button w3-hover-red">
         <i class="material-icons">event</i>
     </a>
-    <a href="#"
+    <a href="user_profile.php#"
         class="w3-bar-item w3-button w3-hover-red">
         <i class="material-icons">person</i>
     </a>
@@ -38,12 +39,20 @@
     </a>
 </div>
 
+
+<!-- Header panel -->
 <div class="w3-main" style="margin-left:200px">
 
   <div class="w3-red w3-margin_bottom">
   <button class="w3-button w3-red w3-xlarge" onclick="w3_open()">&#9776;</button>
     <div class="w3-container">
       <h2>My library management platform <p class="material-icons"> laptop_mac</p></h2>
+    </div>
+    <div class = "w3-display-topright">
+      <a href="logout.php#"
+          class="w3-bar-item w3-button w3-hover-red">
+          <i class="material-icons">exit_to_app</i>
+      </a>
     </div>
   </div>
 </div>
@@ -56,3 +65,17 @@ function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
 </script>
+
+
+<!-- Codes to track session status -->
+<?php
+  session_start();
+  //echo $_SESSION['collectedUsername'];
+  if (isset($_SESSION['userID'])) {
+      echo $_SESSION['userID'];
+    }
+else {
+      echo 'not logged in ';
+    }
+
+ ?>
