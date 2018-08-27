@@ -51,7 +51,7 @@
   </div>
   <!-- Books for borrowing -->
   <div>
-    <form method = "post" action = "test.php">
+    <form method = "post" action = "search.php">
       <div class="w3-panel w3-leftbar w3-border-red">
         <p>The following items are available for borrowing
         </p>
@@ -59,14 +59,14 @@
       <div class = "w3-margin-left">
         <ul class="w3-ul">
           <?php
-            echo $bookInCollection->displayShortCollection($conn);
+            echo $bookInCollection->displayCardInformation($conn);
            ?>
         </ul>
       </div>
   </div>
   <!-- books unavailable -->
   <div>
-    <form method = "post" action = "test.php">
+    <form method = "post" action = "search.php">
       <div class="w3-panel w3-leftbar w3-border-red">
         <p>The following items are currently unavailable
         </p>
@@ -74,7 +74,7 @@
       <div class = "w3-margin-left">
         <ul class="w3-ul">
           <?php
-            echo $bookOutCollection->displayShortCollection($conn);
+            echo $bookOutCollection->displayCardInformation($conn);
            ?>
         </ul>
       </div>
