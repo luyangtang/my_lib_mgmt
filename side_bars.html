@@ -25,18 +25,22 @@
         class="w3-bar-item w3-button w3-hover-red">
         <i class="material-icons">library_books</i>
     </a>
+    <!--
     <a href="#"
         class="w3-bar-item w3-button w3-hover-red">
         <i class="material-icons">event</i>
     </a>
+    -->
     <a href="user_profile.php#"
         class="w3-bar-item w3-button w3-hover-red">
         <i class="material-icons">person</i>
     </a>
+    <!--
     <a href="#"
         class="w3-bar-item w3-button w3-hover-red">
         <i class="material-icons">build</i>
     </a>
+    -->
 </div>
 
 
@@ -70,6 +74,7 @@ function w3_close() {
 <!-- Codes to track session status -->
 <?php
   session_start();
+  echo "Current userid is ";
   //echo $_SESSION['collectedUsername'];
   if (isset($_SESSION['userID'])) {
       echo $_SESSION['userID'];
